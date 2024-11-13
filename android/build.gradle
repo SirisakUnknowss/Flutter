@@ -1,0 +1,24 @@
+// android/build.gradle
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Make sure this is inside the 'buildscript' block
+        classpath 'com.android.tools.build:gradle:7.3.1' // Android Gradle Plugin version
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21' // Kotlin Gradle Plugin version (if using Kotlin)
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
